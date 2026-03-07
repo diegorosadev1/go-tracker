@@ -91,7 +91,10 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a
+                  href="https://gotracker.seeflex.com.br/users/login"
+                  className="hover:text-primary transition-colors"
+                >
                   Área do Cliente
                 </a>
               </li>
@@ -128,7 +131,7 @@ const Footer = () => {
                 <Smartphone className="w-5 h-5 text-primary flex-shrink-0" />
 
                 <p className="font-medium text-sm sm:text-base">
-                  (19) 99999-9999
+                  (19) 99577-8009
                 </p>
               </div>
 

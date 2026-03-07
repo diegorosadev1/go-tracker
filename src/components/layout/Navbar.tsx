@@ -103,12 +103,24 @@ const Navbar = () => {
                 </a>
               ))}
               <hr className="border-zinc-200 dark:border-white/10" />
-              <Button variant="outline" className="w-full py-3">
-                Área do Cliente
-              </Button>
-              <Button variant="primary" className="w-full py-3">
-                Falar com Consultor
-              </Button>
+              <a
+                href="https://gotracker.seeflex.com.br/users/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="md">
+                  Área do Cliente
+                </Button>
+              </a>
+              <a
+                href="https://wa.me/5519995778009?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20rastreamento%20veicular."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="primary" size="md" glow>
+                  Falar com Consultor
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}
