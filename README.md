@@ -185,7 +185,7 @@ npm run dev
 
 Acesse a demonstração do sistema:
 
-🔗 https://go-tracker-one.vercel.app/
+👉 [Ver Demo Online](https://go-tracker-one.vercel.app/)
 
 ---
 
