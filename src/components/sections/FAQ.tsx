@@ -112,51 +112,6 @@ const FAQ = () => {
             </Card>
           ))}
         </div>
-
-        {/* SUPPORT CARD */}
-        <div className="mt-16">
-          <Card
-            rounded="3xl"
-            hoverable={false}
-            className="p-8 sm:p-10 text-center border-primary/20 bg-gradient-to-br from-primary/5 to-transparent"
-          >
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <PhoneCall className="w-6 h-6 text-primary" />
-            </div>
-
-            <h3 className="text-xl sm:text-2xl font-black text-zinc-900 dark:text-zinc-100 mb-2">
-              Ainda tem dúvidas?
-            </h3>
-
-            <p className="text-zinc-500 dark:text-zinc-400 mb-8">
-              Nossa equipe está pronta para ajudar você agora mesmo.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://wa.me/5519995778009?text=Olá!%20Quero%20mais%20informações%20sobre%20o%20rastreamento%20veicular%20da%20GoTracker."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="emerald" className="px-6 py-4 rounded-xl">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp
-                </Button>
-              </a>
-
-              <a
-                href="https://wa.me/5519995778009?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20os%20planos%20de%20rastreamento%20da%20GoTracker."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="primary" glow className="px-6 py-4 rounded-xl">
-                  <UserCheck className="w-5 h-5 mr-2" />
-                  Falar com especialista
-                </Button>
-              </a>
-            </div>
-          </Card>
-        </div>
       </div>
     </section>
   );

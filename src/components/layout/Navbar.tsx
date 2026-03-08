@@ -26,7 +26,7 @@ const Navbar = () => {
           className={`relative flex items-center justify-between h-16 glass rounded-2xl px-6 transition-all duration-300 ${isScrolled ? "shadow-2xl shadow-primary/10" : ""}`}
         >
           {/* Logo ABSOLUTA */}
-          <div className="absolute left-1 top-2/3 -translate-y-1/2 z-50">
+          <div className="absolute left-1 top-2/4 -translate-y-1/2 z-50">
             <Logo className="h-14 w-auto" />
           </div>
 

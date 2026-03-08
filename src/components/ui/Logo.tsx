@@ -5,13 +5,12 @@ type LogoProps = {
   size?: number;
 };
 
-const Logo = ({ className = "", size = 150 }: LogoProps) => {
+const Logo = ({ className = "" }: LogoProps) => {
   return (
     <img
       src="/assets/img/go-tracker-logo.png"
       alt="GO Tracker"
-      style={{ height: size }}
-      className={`w-auto object-contain ${className}`}
+      className={`h-8 sm:h-10 md:h-20 w-auto object-contain ${className}`}
     />
   );
 };
