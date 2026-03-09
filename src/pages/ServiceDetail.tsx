@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Check, MapPin, BarChart3, TrendingUp, Shield, Zap, Clock, Navigation, Users, Activity } from 'lucide-react';
-import { ContactForm } from '../components/sections/ContactForm';
+import { ContactForm } from '../components/ContactForm';
 
 const serviceData: Record<string, any> = {
   'rastreamento-frotas': {

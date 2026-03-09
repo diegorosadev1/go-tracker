@@ -6,7 +6,7 @@ import { LightFleets } from '../components/sections/LightFleets';
 import { Stats } from '../components/sections/Stats';
 import { AppShowcase } from '../components/sections/AppShowcase';
 import { Testimonials } from '../components/sections/Testimonials';
-import { CTA } from '../components/layout/CTA';
+import { CTA } from '../components/sections/CTA';
 
 export const Home = () => {
   return (
