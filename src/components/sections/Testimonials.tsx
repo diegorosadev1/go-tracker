@@ -60,23 +60,32 @@ export const Testimonials = () => {
       aria-labelledby="testimonials-title"
       className="relative overflow-hidden bg-slate-50 px-4 py-24"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <SectionHeader
           align="center"
           theme="light"
           size="md"
           title={
             <>
-              Depoimentos
-              <span className="text-[#F7941E]">
-                <br></br>de clientes
+              <span>
+                Depoimentos
+                <span className="text-[#F7941E]">
+                  <br></br>de clientes
+                </span>
               </span>
             </>
           }
           descriptionColor="text-white/80"
-          description=" Veja como nossas soluções de rastreamento veicular, telemetria e
-            gestão de frotas ajudam empresas a ganhar mais controle, segurança e
-            eficiência operacional em diferentes segmentos."
+          description={
+            <>
+              {" "}
+              <span>
+                Veja como nossas soluções de rastreamento veicular, telemetria e
+                gestão de frotas ajudam empresas a ganhar mais controle,
+                segurança e eficiência operacional em diferentes segmentos
+              </span>
+            </>
+          }
         />
 
         <div

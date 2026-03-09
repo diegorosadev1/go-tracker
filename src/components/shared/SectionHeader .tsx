@@ -4,7 +4,7 @@ interface SectionHeaderProps {
   badge?: string;
   title: React.ReactNode;
   descriptionColor?: string;
-  description?: string;
+  description: React.ReactNode;
   secondDescription?: string;
   align?: "left" | "center" ;
   theme?: "dark" | "light";
