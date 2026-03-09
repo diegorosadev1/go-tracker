@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 export const AppShowcase = () => (
-  <section className="py-24 bg-zinc-50 relative overflow-hidden z-10">
+  <section className="py-24 bg-zinc-50 relative overflow-hidden z-10" id="quem-somos">
     {/* Grid Background Pattern */}
     <div 
       className="absolute inset-0 opacity-[0.1]" 
