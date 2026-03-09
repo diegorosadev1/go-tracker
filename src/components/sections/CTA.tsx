@@ -47,7 +47,7 @@ export const CTA = () => {
           />
 
           <SectionHeader
-            align="left md:center"
+            align="center"
             theme="dark"
             size="md"
             title={

@@ -6,7 +6,7 @@ interface SectionHeaderProps {
   descriptionColor?: string;
   description?: string;
   secondDescription?: string;
-  align?: "left" | "center" | "lerft md:center";
+  align?: "left" | "center" ;
   theme?: "dark" | "light";
   size?: "md" | "lg" | "xl";
 }

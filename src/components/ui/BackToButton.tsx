@@ -36,7 +36,7 @@ export const BackTopButton = () => {
           }`}
         >
           <span className="absolute inset-0 rounded-full bg-gray-900 opacity-30 animate-pulse"></span>
-          <FaArrowUp className="relative z-10 text-xl transition-transform duration-300 group-hover:-translate-y-1" />
+          <FaArrowUp />
         </button>
       </Tooltip>
 
@@ -50,7 +50,7 @@ export const BackTopButton = () => {
         >
           <span className="absolute inline-flex h-full w-full rounded-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
           <span className="relative z-10 flex items-center justify-center">
-            <FaWhatsapp className="text-3xl" />
+            <FaWhatsapp />
           </span>
         </a>
       </Tooltip>
