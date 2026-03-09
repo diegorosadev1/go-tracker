@@ -1,77 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-primary: #f58220; /* Brand Orange */
-  --color-secondary: #2d3e94; /* Brand Blue */
-  --color-dark-bg: #0a0c10;
-  --color-light-bg: #f8fafc;
+  --color-gotracker-orange: #F7941E;
+  --color-gotracker-blue: #2B3990;
 }
-
-@variant dark (&:where(.dark, .dark *));
 
 @layer base {
-  body {
-    @apply bg-light-bg text-zinc-900 dark:bg-dark-bg dark:text-zinc-100 antialiased selection:bg-primary/30 transition-colors duration-500;
+  html {
+    scroll-behavior: smooth;
   }
 }
-
-@layer utilities {
-  .glass {
-    @apply backdrop-blur-xl bg-white/70 border border-black/5 dark:bg-white/5 dark:border-white/10;
-  }
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600;
-  }
-
-  .text-gradient-blue {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-blue-800;
-  }
-
-  .bg-grid {
-    background-size: 40px 40px;
-    background-image:
-      linear-gradient(to right, rgba(245, 130, 32, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(245, 130, 32, 0.05) 1px, transparent 1px);
-  }
-
-  .glow-primary {
-    @apply shadow-[0_0_20px_rgba(245,130,32,0.3)] dark:shadow-[0_0_30px_rgba(245,130,32,0.4)];
-  }
-
-  .glow-secondary {
-    @apply shadow-[0_0_20px_rgba(45,62,148,0.3)] dark:shadow-[0_0_30px_rgba(45,62,148,0.4)];
-  }
-}
-
-@keyframes pulse-slow {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-zinc-300 dark:bg-zinc-800 rounded-full hover:bg-zinc-400 dark:hover:bg-zinc-700 transition-colors;
-}
-
-
