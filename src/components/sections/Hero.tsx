@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     image:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1920",
+      "https://plus.unsplash.com/premium_photo-1661962667495-c9dd5c790758?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZyb3RhJTIwZGUlMjBjYXJyb3N8ZW58MHx8MHx8fDA%3D",
     title: "Rastreamento de Frotas",
     subtitle: "Tecnologia de ponta para sua segurança e gestão em tempo real.",
     link: "/servicos/rastreamento-frotas",
@@ -22,7 +22,7 @@ const slides = [
   },
   {
     image:
-      "https://aiko.digital/wp-content/uploads/2023/12/73330066-21ba-4e6c-b283-153c576835e1.jpg",
+      "https://crearesistemas.com.br/wp-content/uploads/2025/04/salva-1-1024x503.webp",
     title: "Telemetria Avançada",
     subtitle: "Reduza custos e aumente a vida útil dos seus veículos.",
     link: "/servicos/telemetria-avancada",
@@ -30,7 +30,7 @@ const slides = [
   },
   {
     image:
-      "	https://garagem360.com.br/wp-content/uploads/2021/10/Novo-Onix-Plus-Premier-19-1-768x513.jpg",
+      "https://www.intelipost.com.br/wp-content/uploads/2021/08/post_thumbnail-26bb9c9b03f040ccc121af1b3541493f.jpeg",
     title: "Otimização de Rotas",
     subtitle: "Rotas inteligentes para uma logística imbatível e econômica.",
     link: "/servicos/otimizacao-rotas",

@@ -9,7 +9,7 @@ const serviceData: Record<string, any> = {
     title: 'Rastreamento de Frotas',
     heroTitle: 'Tenha Controle Total sobre a sua frota em Tempo Real',
     heroDesc: 'O Sistema de Rastreamento é exclusivo para a região e possui um conjunto de funcionalidades que o tornam completo para o serviço de rastreamento. Assim, o condutor ou gestor de frotas pode rastrear, bloquear, verificar o trajeto percorrido pelo veículo, se está ligado ou desligado, saber o local exato onde ele está, ter o controle de horas trafegadas, assim como o tempo de parada, horários de início e final de rota, histórico do sentido percorrido por até 1 ano e demais funcionalidades que deixam o veículo ou frotas cada vez mais protegidos, garantindo tranquilidade e redução de custos.',
-    heroImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800',
+    heroImage: 'https://www.shutterstock.com/image-photo/aerial-view-semi-truck-trailer-600nw-2668664849.jpg',
     benefits: [
       { icon: MapPin, title: 'Acompanhe, a qualquer momento, a localização dos veículos.' },
       { icon: BarChart3, title: 'Reduza gastos com consumo de combustível, desgaste do veículo e multas.' },
@@ -17,13 +17,13 @@ const serviceData: Record<string, any> = {
       { icon: Shield, title: 'Crie cercas virtuais para ter mais controle sobre a movimentação de sua frota.' },
       { icon: Zap, title: 'Reduza a ocorrência de multas, receba alertas de excesso de velocidade.' }
     ],
-    complementaryImage: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800'
+    complementaryImage: 'https://plus.unsplash.com/premium_photo-1661962667495-c9dd5c790758?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZyb3RhJTIwZGUlMjBjYXJyb3N8ZW58MHx8MHx8fDA%3D'
   },
   'gestao-frotas': {
     title: 'Gestão de Frotas',
     heroTitle: 'A gestão de sua frota na Palma de sua mão!',
     heroDesc: 'A gestão de frotas é um dos serviços oferecidos pela Go Tracker, e consiste em monitorar e controlar a utilização de veículos em uma frota, permitindo uma visão completa e precisa do desempenho dos veículos, seus custos e sua utilização. Com a gestão de frotas da Go Tracker, é possível aumentar a eficiência e reduzir os custos de operação, além de melhorar a segurança dos veículos e seus motoristas.',
-    heroImage: 'https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&q=80&w=800',
+    heroImage: 'https://efmsitetlogbrs1storep.blob.core.windows.net/ticketlog/uploads/2020/03/frota-de-carros.jpg',
     benefits: [
       { icon: MapPin, title: 'Localização em tempo real de todos os veículos da frota.' },
       { icon: BarChart3, title: 'Relatórios detalhados de custos e manutenção.' },
@@ -31,13 +31,13 @@ const serviceData: Record<string, any> = {
       { icon: Shield, title: 'Controle rigoroso de manutenções preventivas.' },
       { icon: Users, title: 'Gestão de comportamento e desempenho dos motoristas.' }
     ],
-    complementaryImage: 'https://images.unsplash.com/photo-1454165833767-02a698d48769?auto=format&fit=crop&q=80&w=800'
+    complementaryImage: 'https://plus.unsplash.com/premium_photo-1661962667495-c9dd5c790758?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZyb3RhJTIwZGUlMjBjYXJyb3N8ZW58MHx8MHx8fDA%3D'
   },
   'telemetria-avancada': {
     title: 'Telemetria Avançada',
     heroTitle: 'A Telemetria Avançada pode ser a solução que a sua frota precisa.',
     heroDesc: 'A telemetria avançada é outro serviço oferecido pela Go Tracker, que permite o monitoramento em tempo real de diversos aspectos dos veículos, como consumo de combustível, velocidade, quilometragem e temperatura. Com a telemetria, é possível identificar problemas e falhas antes que eles se tornem grandes problemas, reduzir o consumo de combustível e aumentar a vida útil dos veículos.',
-    heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    heroImage: 'https://crearesistemas.com.br/wp-content/uploads/2025/04/salva-1-1024x503.webp',
     benefits: [
       { icon: Activity, title: 'Monitoramento detalhado de RPM e temperatura do motor.' },
       { icon: BarChart3, title: 'Análise precisa de consumo de combustível por trajeto.' },
@@ -45,13 +45,13 @@ const serviceData: Record<string, any> = {
       { icon: Zap, title: 'Alertas em tempo real de falhas mecânicas ou elétricas.' },
       { icon: Clock, title: 'Controle exato de horas trabalhadas e tempo de motor ligado.' }
     ],
-    complementaryImage: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800'
+    complementaryImage: 'https://plus.unsplash.com/premium_photo-1661962667495-c9dd5c790758?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZyb3RhJTIwZGUlMjBjYXJyb3N8ZW58MHx8MHx8fDA%3D'
   },
   'otimizacao-rotas': {
     title: 'Otimização de Rotas',
     heroTitle: 'Rotas Inteligentes para uma Logística Imbatível',
     heroDesc: 'A otimização de rotas da Go Tracker utiliza algoritmos avançados para calcular os trajetos mais eficientes para sua frota. Considerando variáveis como tráfego, distância e janelas de entrega, nosso sistema garante que seus motoristas percorram o menor caminho no menor tempo possível, resultando em economia direta de combustível e maior satisfação dos seus clientes finais.',
-    heroImage: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800',
+    heroImage: 'https://estruturei.com.br/wp-content/uploads/2023/07/O-que-e-Otimizacao-de-Rotas-e-Como-Funciona-Atualizado-2023.jpg',
     benefits: [
       { icon: Navigation, title: 'Cálculo automático das rotas mais rápidas e econômicas.' },
       { icon: Clock, title: 'Redução drástica no tempo médio de entrega.' },
@@ -59,7 +59,7 @@ const serviceData: Record<string, any> = {
       { icon: MapPin, title: 'Sequenciamento inteligente de paradas e coletas.' },
       { icon: TrendingUp, title: 'Aumento da capacidade de atendimento da frota.' }
     ],
-    complementaryImage: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=800'
+    complementaryImage: 'https://plus.unsplash.com/premium_photo-1661962667495-c9dd5c790758?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZyb3RhJTIwZGUlMjBjYXJyb3N8ZW58MHx8MHx8fDA%3D'
   }
 };
 

@@ -14,7 +14,7 @@ const solutions = [
     title: "Rastreamento para frotas",
     desc: "Monitore a localização dos veículos em tempo real, aumente a segurança da operação e responda rapidamente a emergências ou desvios de rota.",
     icon: Truck,
-    img: "https://tecnoraster.com.br/wp-content/uploads/2023/10/rasterador-gps-5-maneiras-como-ele-ajuda-na-sua-frota.jpg",
+    img: "https://www.shutterstock.com/image-photo/aerial-view-semi-truck-trailer-600nw-2668664849.jpg",
     slug: "rastreamento-frotas",
     imageAlt: "Caminhões e veículos de frota em operação logística",
   },
