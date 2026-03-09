@@ -53,7 +53,7 @@ export const Header = ({
                   <img
                     src="/assets/img/logo.png"
                     alt="Go Tracker - Rastreamento Veicular"
-                    className="h-8 h-20 md:h-11 lg:h-12 xl:h-14 w-auto object-contain"
+                    className="h-8 h-20 md:h-20 object-contain"
                   />
                 </Link>
               </div>
