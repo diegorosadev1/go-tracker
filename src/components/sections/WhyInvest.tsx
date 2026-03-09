@@ -1,73 +1,110 @@
-import React from 'react';
-import { TrendingUp, Clock, ShieldCheck, MapPin } from 'lucide-react';
+import React from "react";
+import { TrendingUp, Clock, ShieldCheck, MapPin } from "lucide-react";
+
+const benefits = [
+  {
+    title: "Redução de custos",
+    description:
+      "Economize até 20% em combustível e manutenção com mais controle operacional.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Mais produtividade",
+    description:
+      "Acompanhe tempo de parada, rotas e execução das atividades da frota.",
+    icon: Clock,
+  },
+  {
+    title: "Mais segurança",
+    description:
+      "Aumente a proteção da operação com monitoramento e recuperação mais rápida de veículos.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Localização em tempo real",
+    description:
+      "Conte com rastreamento GPS preciso e cobertura para operações em todo o país.",
+    icon: MapPin,
+  },
+];
 
 export const WhyInvest = () => (
-  <section className="py-24 bg-zinc-100 relative z-10">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="flex flex-col lg:flex-row items-center gap-16">
+  <section
+    aria-labelledby="why-invest-title"
+    className="relative z-10 bg-zinc-100 py-24"
+  >
+    <div className="mx-auto max-w-7xl px-4">
+      <div className="flex flex-col items-center gap-16 lg:flex-row">
         <div className="lg:w-1/2">
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=800" 
-              alt="Tecnologia de Rastreamento"
-              className="rounded-[40px] shadow-2xl relative z-10 border-8 border-white"
+          <figure className="relative">
+            <img
+              src="https://storage.transportemoderno.com.br/uploads/2022/06/Scudo.jpeg"
+              alt="Painel de tecnologia e monitoramento para rastreamento inteligente de veículos"
+              loading="lazy"
+              decoding="async"
+              className="relative z-10 rounded-[40px] border-8 border-white shadow-2xl"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-[#F7941E] rounded-[40px] -z-0 opacity-20"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 border-8 border-[#2B3990] rounded-full -z-0 opacity-10"></div>
-          </div>
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-6 -right-6 h-64 w-64 rounded-[40px] bg-[#F7941E] opacity-20"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute -left-6 -top-6 h-32 w-32 rounded-full border-8 border-[#2B3990] opacity-10"
+            />
+          </figure>
         </div>
-        <div className="lg:w-1/2">
-          <h2 className="text-4xl font-black text-[#2B3990] mb-6 leading-tight">
-            Por que investir em <br />
-            <span className="text-[#F7941E]">Rastreamento Inteligente?</span>
-          </h2>
-          <p className="text-zinc-600 mb-10 leading-relaxed">
-            Investir em rastreamento veicular traz benefícios imediatos para empresas de todos os tamanhos. Nossa plataforma oferece insights que transformam sua operação.
-          </p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white shadow-sm rounded-2xl flex items-center justify-center text-[#F7941E]">
-                <TrendingUp size={24} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[#2B3990] mb-1">Redução de Custos</h4>
-                <p className="text-xs text-zinc-500">Economize até 20% em combustível e manutenção.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white shadow-sm rounded-2xl flex items-center justify-center text-[#F7941E]">
-                <Clock size={24} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[#2B3990] mb-1">Produtividade</h4>
-                <p className="text-xs text-zinc-500">Acompanhe o tempo de parada e execução de rotas.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white shadow-sm rounded-2xl flex items-center justify-center text-[#F7941E]">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[#2B3990] mb-1">Mais Segurança</h4>
-                <p className="text-xs text-zinc-500">Recuperação de veículos em tempo recorde.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-white shadow-sm rounded-2xl flex items-center justify-center text-[#F7941E]">
-                <MapPin size={24} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[#2B3990] mb-1">Localização Real</h4>
-                <p className="text-xs text-zinc-500">Precisão GPS de última geração em todo o país.</p>
-              </div>
-            </div>
-          </div>
 
-          <button className="mt-12 bg-[#2B3990] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1e2866] transition-all shadow-lg">
-            Falar com Especialista
-          </button>
+        <div className="lg:w-1/2">
+          <header className="mb-10">
+            <h2
+              id="why-invest-title"
+              className="mb-6 text-4xl font-black leading-tight text-[#2B3990]"
+            >
+              Por que investir em{" "}
+              <span className="text-[#F7941E]">rastreamento inteligente</span>?
+            </h2>
+
+            <p className="leading-relaxed text-zinc-700">
+              Investir em rastreamento veicular inteligente gera benefícios
+              imediatos para empresas de todos os portes. Nossa plataforma
+              oferece dados e insights que ajudam a reduzir custos, aumentar a
+              produtividade, melhorar a segurança e otimizar a gestão da frota.
+            </p>
+          </header>
+
+          <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2" role="list">
+            {benefits.map(({ title, description, icon: Icon }) => (
+              <li key={title}>
+                <article className="flex gap-4">
+                  <div
+                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-white text-[#F7941E] shadow-sm"
+                    aria-hidden="true"
+                  >
+                    <Icon size={24} aria-hidden="true" focusable="false" />
+                  </div>
+
+                  <div>
+                    <h3 className="mb-1 font-bold text-[#2B3990]">{title}</h3>
+                    <p className="text-sm text-zinc-600">{description}</p>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-12">
+            <a
+              href="https://wa.me/5519995778009?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20rastreamento%20veicular."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Falar com especialista pelo WhatsApp"
+              className="inline-flex mt-12 bg-[#2B3990] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1e2866] transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2B3990] focus:ring-offset-2"
+            >
+              Falar com especialista
+            </a>
+          </div>
         </div>
       </div>
     </div>
