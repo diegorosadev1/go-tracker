@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 export const WhatsAppFloat = () => {
   return (
     <a
-      href="https://wa.me/5519920011550"
+      href="https://wa.me/5519920011550?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20rastreamento%20veicular"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco no WhatsApp"

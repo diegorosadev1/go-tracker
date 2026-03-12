@@ -113,7 +113,7 @@ export const Header = ({
                 </a>
 
                 <a
-                  href="https://gotracker.seeflex.com.br/users/login"
+                  gotracker.seeflex.com.br/users/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={clientAreaDesktopClass}
