@@ -24,7 +24,7 @@ const slides = [
   },
   {
     image:
-      "https://crearesistemas.com.br/wp-content/uploads/2025/04/salva-1-1024x503.webp",
+      "public/assets/img/tracking.webp",
     title: "Reduza os custos operacionais",
     subtitle:
       "Identifique desperdícios, otimize rotas e aumente a eficiência da sua frota.",
