@@ -28,7 +28,7 @@ export const CTA = () => {
     <section
       ref={sectionRef}
       aria-labelledby="cta-title"
-      className="relative z-10 py-14 sm:py-16 md:py-20"
+      className="theme-section relative z-10 py-14 sm:py-16 md:py-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div

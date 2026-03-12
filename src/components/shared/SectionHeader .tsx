@@ -3,10 +3,11 @@ import React from "react";
 interface SectionHeaderProps {
   badge?: string;
   title: React.ReactNode;
+  titleColor?: string;
   descriptionColor?: string;
   description: React.ReactNode;
   secondDescription?: string;
-  align?: "left" | "center" ;
+  align?: "left" | "center";
   theme?: "dark" | "light";
   size?: "md" | "lg" | "xl";
 }
@@ -16,6 +17,8 @@ export const SectionHeader = ({
   title,
   description,
   secondDescription,
+  titleColor,
+  descriptionColor,
   align = "left",
   theme = "dark",
   size = "lg",
@@ -31,8 +34,17 @@ export const SectionHeader = ({
     xl: "text-6xl md:text-8xl",
   };
 
-  const descriptionColors =
+  const defaultTitleColor =
+    theme === "dark" ? "text-white" : "text-zinc-900";
+
+  const finalTitleColor =
+    titleColor || defaultTitleColor;
+
+  const defaultDescriptionColors =
     theme === "dark" ? "text-slate-300" : "text-zinc-700";
+
+  const finalDescriptionColor =
+    descriptionColor || defaultDescriptionColors;
 
   const badgeTheme =
     theme === "dark"
@@ -54,23 +66,19 @@ export const SectionHeader = ({
       )}
 
       <h2
-        className={`${titleSizes[size]} font-black mb-8 leading-[0.85] tracking-tighter italic`}
+        className={`${titleSizes[size]} mb-8 font-black leading-[0.85] tracking-tighter italic ${finalTitleColor}`}
       >
         {title}
       </h2>
 
       {description && (
-        <p
-          className={`mb-8 text-x1 font-medium leading-relaxed ${descriptionColors}`}
-        >
+        <p className={`mb-8 text-xl font-medium leading-relaxed ${finalDescriptionColor}`}>
           {description}
         </p>
       )}
 
       {secondDescription && (
-        <p
-          className={`mb-8 text-x1 font-medium leading-relaxed ${descriptionColors}`}
-        >
+        <p className={`mb-8 text-xl font-medium leading-relaxed ${finalDescriptionColor}`}>
           {secondDescription}
         </p>
       )}

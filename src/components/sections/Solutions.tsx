@@ -50,15 +50,17 @@ export const Solutions = () => {
     <section
       id="servicos"
       aria-labelledby="solutions-title"
-      className="relative z-10 bg-zinc-100 py-24"
+      className="relative z-10 bg-[#e9eaee] dark:bg-[#0B122E] py-24 transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeader
           theme="light"
           align="center"
           size="md"
-          title={<>Nossas soluções </>}
-          description="  Conheça nossas soluções para rastreamento veicular, telemetria, IOT
+          title={<>Nossas soluções</>}
+          titleColor="dark:text-white"
+          descriptionColor="text-zinc-700 dark:text-white/70"
+          description="Conheça nossas soluções para rastreamento veicular, telemetria, IOT
             e otimização de frotas para pequenas e grandes empresas, com
             equipamento homologado pela Anatel e sistema exclusivo de
             monitoramento."
@@ -69,7 +71,7 @@ export const Solutions = () => {
             <li key={slug} className="list-none">
               <motion.article
                 whileHover={{ y: -10 }}
-                className="group relative h-[250px] overflow-hidden rounded-2xl shadow-lg"
+                className="group relative h-[250px] overflow-hidden rounded-2xl shadow-lg dark:shadow-[0_10px_40px_rgba(0,0,0,0.35)]"
                 aria-labelledby={`solution-${slug}-title`}
               >
                 <img
@@ -81,7 +83,7 @@ export const Solutions = () => {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 flex flex-col justify-center bg-gradient-to-r from-[#30355a]/90 to-[#1a225e]/40 p-8">
+                <div className="absolute inset-0 flex flex-col justify-center bg-gradient-to-r from-[#30355a]/90 to-[#1a225e]/40 dark:from-black/80 dark:to-black/40 p-8">
                   <div className="mb-4">
                     <Icon
                       size={32}
@@ -109,11 +111,7 @@ export const Solutions = () => {
                       className="inline-flex items-center gap-1 text-sm font-bold text-[#F7941E] transition-all hover:gap-2 focus:outline-none focus:ring-2 focus:ring-[#F7941E] focus:ring-offset-2 focus:ring-offset-[#1e3a8a]"
                     >
                       Saiba mais
-                      <ChevronRight
-                        size={16}
-                        aria-hidden="true"
-                        focusable="false"
-                      />
+                      <ChevronRight size={16} aria-hidden="true" />
                     </Link>
                   </div>
                 </div>

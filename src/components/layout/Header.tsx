@@ -1,5 +1,5 @@
-import React from "react";
-import { Menu, X, User } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Menu, X, User, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 
@@ -9,17 +9,80 @@ interface HeaderProps {
   setIsMenuOpen: (open: boolean) => void;
 }
 
+type NavItem = {
+  label: string;
+  href: string;
+  isHome?: boolean;
+};
+
+const navItems: NavItem[] = [
+  { label: "Home", href: "/", isHome: true },
+  { label: "Quem Somos", href: "/#quem-somos" },
+  { label: "Soluções", href: "/#servicos" },
+  { label: "Depoimentos", href: "/#depoimentos" },
+  { label: "Contato", href: "/#contato" },
+];
+
 const navLinkClass =
-  "text-zinc-700 font-bold text-sm uppercase hover:text-[#1e3a8a] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-sm";
+  "theme-text-soft font-bold text-sm uppercase tracking-wide hover:text-[#1e3a8a] dark:hover:text-[#F7941E] transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
 
 const homeLinkClass =
-  "text-[#1e3a8a] font-bold text-sm uppercase hover:text-[#F7941E] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-sm";
+  "font-bold text-sm uppercase tracking-wide text-[#1e3a8a] dark:text-[#F7941E] hover:text-[#F7941E] dark:hover:text-white transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
 
 const clientAreaDesktopClass =
-  "bg-[#1e3a8a] text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-[#16306f] transition-all shadow-md inline-flex items-center gap-2 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
+  "bg-[#1e3a8a] dark:bg-[#F7941E] theme-button-primary inline-flex items-center gap-2 whitespace-nowrap rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wider shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
 
 const clientAreaMobileClass =
-  "lg:hidden bg-[#1e3a8a] text-white px-4 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wide hover:bg-[#16306f] transition-all shadow-md inline-flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 min-w-[150px] sm:min-w-[180px]";
+  "bg-[#1e3a8a] dark:bg-[#F7941E] theme-button-secondary lg:hidden inline-flex min-w-[150px] shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-[10px] font-bold uppercase tracking-wide shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 sm:min-w-[180px] sm:text-xs";
+
+const mobileNavLinkClass =
+  "theme-text-soft text-2xl font-bold hover:text-[#1e3a8a] dark:hover:text-[#F7941E] transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
+
+const mobileHomeLinkClass =
+  "text-2xl font-bold text-[#1e3a8a] dark:text-[#F7941E] hover:text-[#F7941E] dark:hover:text-white transition-colors rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
+
+const menuButtonClass =
+  "theme-button-icon h-12 w-12 rounded-2xl shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
+
+const themeButtonClass =
+  "theme-button-icon h-12 w-12 rounded-2xl shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2";
+
+function NavItemLink({
+  item,
+  onClick,
+  mobile = false,
+}: {
+  item: NavItem;
+  onClick?: () => void;
+  mobile?: boolean;
+}) {
+  const baseClass = mobile
+    ? item.isHome
+      ? mobileHomeLinkClass
+      : mobileNavLinkClass
+    : item.isHome
+      ? homeLinkClass
+      : navLinkClass;
+
+  if (item.isHome) {
+    return (
+      <Link
+        to={item.href}
+        className={baseClass}
+        onClick={onClick}
+        aria-current="page"
+      >
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={item.href} className={baseClass} onClick={onClick}>
+      {item.label}
+    </a>
+  );
+}
 
 export const Header = ({
   scrolled,
@@ -29,37 +92,65 @@ export const Header = ({
   const closeMenu = () => setIsMenuOpen(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setIsDark(true);
+      return;
+    }
+
+    if (savedTheme === "light") {
+      document.documentElement.classList.remove("dark");
+      setIsDark(false);
+      return;
+    }
+
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
+    document.documentElement.classList.toggle("dark", prefersDark);
+    setIsDark(prefersDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextThemeIsDark = !isDark;
+
+    setIsDark(nextThemeIsDark);
+    document.documentElement.classList.toggle("dark", nextThemeIsDark);
+    localStorage.setItem("theme", nextThemeIsDark ? "dark" : "light");
+  };
+
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 border-b border-zinc-200/70 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md"
-            : "bg-white/90 backdrop-blur-sm"
+        className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+          scrolled ? "theme-header shadow-lg" : "theme-header"
         }`}
-        role="banner"
       >
-        <div className="bg-zinc-100 lg:bg-transparent max-w-7xl mx-auto px-4 sm:px-5 ">
-          <div className="py-3 lg:py-0   lg:bg-transparent ">
-            <div className="flex flex-col  lg:flex-row lg:items-center lg:justify-between gap-3 lg:min-h-[84px]">
-              {/* Mobile: logo em cima | Desktop: logo à esquerda */}
-              <div className="flex justify-center bg-gray/50 lg:justify-start ">
+        <div className="mx-auto max-w-7xl px-4 sm:px-5">
+          <div className="py-3 lg:py-0">
+            <div className="flex flex-col gap-3 lg:min-h-[84px] lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex justify-center lg:justify-start">
                 <Link
                   to="/"
-                  className="shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-md"
+                  className="shrink-0 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2"
                   onClick={closeMenu}
                   aria-label="Ir para a página inicial da Go Tracker"
                 >
                   <img
                     src="/assets/img/logo.png"
                     alt="Go Tracker - Rastreamento Veicular"
-                    className="h-8 h-20 md:h-20 object-contain"
+                    className="h-20 object-contain"
                   />
                 </Link>
               </div>
 
-              {/* Mobile: botões abaixo da logo | Desktop: escondido */}
-              <div className="flex items-center justify-between gap-3 lg:hidden ">
+              <div className="flex items-center justify-between gap-3 lg:hidden">
                 <a
                   href="https://gotracker.seeflex.com.br/users/login"
                   target="_blank"
@@ -71,49 +162,64 @@ export const Header = ({
                   <span className="truncate">Área do Cliente</span>
                 </a>
 
-                <button
-                  type="button"
-                  className="text-[#1e3a8a] p-2.5 rounded-xl shrink-0 hover:bg-[#1e3a8a]/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2"
-                  onClick={toggleMenu}
-                  aria-expanded={isMenuOpen}
-                  aria-controls="mobile-menu"
-                  aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-                >
-                  {isMenuOpen ? (
-                    <X size={28} aria-hidden="true" />
-                  ) : (
-                    <Menu size={28} aria-hidden="true" />
-                  )}
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    className={themeButtonClass}
+                    onClick={toggleTheme}
+                    aria-label={
+                      isDark ? "Ativar tema claro" : "Ativar tema escuro"
+                    }
+                  >
+                    {isDark ? (
+                      <Sun size={20} aria-hidden="true" />
+                    ) : (
+                      <Moon size={20} aria-hidden="true" />
+                    )}
+                  </button>
+
+                  <button
+                    type="button"
+                    className={menuButtonClass}
+                    onClick={toggleMenu}
+                    aria-expanded={isMenuOpen}
+                    aria-controls="mobile-menu"
+                    aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+                  >
+                    {isMenuOpen ? (
+                      <X size={26} aria-hidden="true" />
+                    ) : (
+                      <Menu size={26} aria-hidden="true" />
+                    )}
+                  </button>
+                </div>
               </div>
 
-              {/* Desktop */}
               <nav
-                className="hidden lg:flex items-center gap-8"
+                className="hidden items-center gap-5 lg:flex"
                 aria-label="Navegação principal"
               >
-                <Link to="/" className={homeLinkClass} aria-current="page">
-                  Home
-                </Link>
+                {navItems.map((item) => (
+                  <NavItemLink key={item.label} item={item} />
+                ))}
 
-                <a href="/#quem-somos" className={navLinkClass}>
-                  Quem Somos
-                </a>
-
-                <a href="/#servicos" className={navLinkClass}>
-                  Soluções
-                </a>
-
-                <a href="/#depoimentos" className={navLinkClass}>
-                  Depoimentos
-                </a>
-
-                <a href="/#contato" className={navLinkClass}>
-                  Contato
-                </a>
+                <button
+                  type="button"
+                  className={themeButtonClass}
+                  onClick={toggleTheme}
+                  aria-label={
+                    isDark ? "Ativar tema claro" : "Ativar tema escuro"
+                  }
+                >
+                  {isDark ? (
+                    <Sun size={20} aria-hidden="true" />
+                  ) : (
+                    <Moon size={20} aria-hidden="true" />
+                  )}
+                </button>
 
                 <a
-                  gotracker.seeflex.com.br/users/login"
+                  href="https://gotracker.seeflex.com.br/users/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={clientAreaDesktopClass}
@@ -136,58 +242,26 @@ export const Header = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white pt-28 px-6 lg:hidden"
+            className="theme-bg fixed inset-0 z-40 px-6 pt-28 lg:hidden"
           >
             <nav
-              className="flex flex-col gap-5 text-start mt-20"
+              className="mt-20 flex flex-col gap-5 text-start"
               aria-label="Menu mobile"
             >
-              <Link
-                to="/"
-                className="text-2xl font-bold text-[#1e3a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-md"
-                onClick={closeMenu}
-                aria-current="page"
-              >
-                Home
-              </Link>
-
-              <a
-                href="/#quem-somos"
-                className="text-2xl font-bold text-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-md"
-                onClick={closeMenu}
-              >
-                Quem Somos
-              </a>
-
-              <a
-                href="/#servicos"
-                className="text-2xl font-bold text-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-md"
-                onClick={closeMenu}
-              >
-                Soluções
-              </a>
-
-              <a
-                href="/#depoimentos"
-                className="text-2xl font-bold text-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-md"
-                onClick={closeMenu}
-              >
-                Depoimentos
-              </a>
-
-              <a
-                href="/#contato"
-                className="text-2xl font-bold text-zinc-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2 rounded-md"
-                onClick={closeMenu}
-              >
-                Contato
-              </a>
+              {navItems.map((item) => (
+                <NavItemLink
+                  key={item.label}
+                  item={item}
+                  onClick={closeMenu}
+                  mobile
+                />
+              ))}
 
               <a
                 href="https://gotracker.seeflex.com.br/users/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 bg-[#1e3a8a] text-white py-4 px-6 rounded-xl text-lg font-bold inline-flex items-center justify-center gap-2 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2"
+                className="theme-button-secondary mt-2 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-lg font-bold text-white shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F7941E] focus-visible:ring-offset-2"
                 onClick={closeMenu}
                 aria-label="Abrir Área do Cliente em uma nova aba"
               >
@@ -197,7 +271,7 @@ export const Header = ({
 
               <button
                 type="button"
-                className="mt-2 bg-[#F7941E] text-white py-4 rounded-xl text-lg font-bold shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] focus-visible:ring-offset-2"
+                className="theme-button-primary mt-2 rounded-xl py-4 text-lg font-bold text-white shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1e3a8a] focus-visible:ring-offset-2"
               >
                 Falar com Consultor
               </button>

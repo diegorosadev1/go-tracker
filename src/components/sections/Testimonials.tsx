@@ -58,7 +58,7 @@ export const Testimonials = () => {
     <section
       id="depoimentos"
       aria-labelledby="testimonials-title"
-      className="relative overflow-hidden bg-slate-50 px-4 py-24"
+      className="bg-[#e2e2e2d4] dark:bg-[#0B122E]  relative overflow-hidden px-4 py-24"
     >
       <div className="mx-auto max-w-6xl">
         <SectionHeader
@@ -70,19 +70,20 @@ export const Testimonials = () => {
               <span>
                 Depoimentos
                 <span className="text-[#F7941E]">
-                  <br></br>de clientes
+                  <br />
+                  de clientes
                 </span>
               </span>
             </>
           }
-          descriptionColor="text-white/80"
+          titleColor="dark:text-white"
+          descriptionColor="text-zinc-700 dark:text-white/70"
           description={
             <>
-              {" "}
               <span>
                 Veja como nossas soluções de rastreamento veicular, telemetria e
                 gestão de frotas ajudam empresas a ganhar mais controle,
-                segurança e eficiência operacional em diferentes segmentos
+                segurança e eficiência operacional em diferentes segmentos.
               </span>
             </>
           }
@@ -100,7 +101,7 @@ export const Testimonials = () => {
                   className="min-w-0 flex-[0_0_100%] px-4 md:flex-[0_0_50%] lg:flex-[0_0_33.33%]"
                   role="listitem"
                 >
-                  <article className="flex h-full flex-col rounded-2xl border-b-4 border-gotracker-orange bg-white p-8 shadow-lg">
+                  <article className="flex h-full flex-col rounded-2xl border-b-4 border-gotracker-orange  g-white dark:bg-[#141e47]  p-8 shadow-lg">
                     <div
                       className="mb-6 flex gap-1"
                       aria-label="Avaliação de 5 de 5 estrelas"
@@ -118,13 +119,13 @@ export const Testimonials = () => {
                     </div>
 
                     <blockquote className="mb-8 flex-grow">
-                      <p className="font-medium italic leading-relaxed text-slate-600">
+                      <p className="theme-text-soft font-medium italic leading-relaxed">
                         “{item.text}”
                       </p>
                     </blockquote>
 
                     <footer>
-                      <p className="text-lg font-black text-gotracker-blue">
+                      <p className="text-lg font-black text-gotracker-blue dark:text-white">
                         {item.name}
                       </p>
                       <p className="text-sm font-bold uppercase tracking-widest text-gotracker-orange">
@@ -140,7 +141,7 @@ export const Testimonials = () => {
           <button
             type="button"
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 z-20 flex h-12 w-12 -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full border border-slate-100 bg-white text-gotracker-blue shadow-xl transition-colors hover:text-gotracker-orange focus:outline-none focus:ring-2 focus:ring-gotracker-orange focus:ring-offset-2 lg:-translate-x-12"
+            className="theme-button-icon absolute left-0 top-1/2 z-20 flex h-12 w-12 -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full border transition-colors hover:text-gotracker-orange focus:outline-none focus:ring-2 focus:ring-gotracker-orange focus:ring-offset-2 lg:-translate-x-12"
             aria-label="Mostrar depoimento anterior"
           >
             <ChevronLeft size={24} aria-hidden="true" focusable="false" />
@@ -149,7 +150,7 @@ export const Testimonials = () => {
           <button
             type="button"
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 z-20 flex h-12 w-12 translate-x-4 -translate-y-1/2 items-center justify-center rounded-full border border-slate-100 bg-white text-gotracker-blue shadow-xl transition-colors hover:text-gotracker-orange focus:outline-none focus:ring-2 focus:ring-gotracker-orange focus:ring-offset-2 lg:translate-x-12"
+            className="theme-button-icon absolute right-0 top-1/2 z-20 flex h-12 w-12 translate-x-4 -translate-y-1/2 items-center justify-center rounded-full border transition-colors hover:text-gotracker-orange focus:outline-none focus:ring-2 focus:ring-gotracker-orange focus:ring-offset-2 lg:translate-x-12"
             aria-label="Mostrar próximo depoimento"
           >
             <ChevronRight size={24} aria-hidden="true" focusable="false" />

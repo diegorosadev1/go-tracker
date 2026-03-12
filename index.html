@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-      Go Tracker | Rastreamento Veicular via Satélite
-    </title>
+    <title>Go Tracker | Rastreamento Veicular via Satélite</title>
 
     <meta
       name="description"
@@ -70,10 +68,18 @@
         "url": "https://www.gotracker.com.br/",
         "logo": "https://www.gotracker.com.br/assets/img/logo.png",
         "description": "Empresa especializada em rastreamento veicular, gestão de frotas, telemetria e otimização de rotas.",
-        "sameAs": [
-          "https://www.facebook.com/",
-          "https://www.instagram.com/"
-        ]
+        "sameAs": ["https://www.facebook.com/", "https://www.instagram.com/"]
+      }
+    </script>
+
+    <script>
+      const theme = localStorage.getItem("theme");
+
+      if (
+        theme === "dark" ||
+        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
       }
     </script>
   </head>

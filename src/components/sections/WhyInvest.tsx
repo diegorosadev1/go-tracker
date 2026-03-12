@@ -32,7 +32,7 @@ const benefits = [
 export const WhyInvest = () => (
   <section
     aria-labelledby="why-invest-title"
-    className="relative z-10 bg-zinc-100 py-24"
+    className="theme-section relative z-10 py-24"
   >
     <div className="mx-auto max-w-7xl px-4">
       <div className="flex flex-col items-center gap-16 lg:flex-row">
@@ -43,34 +43,36 @@ export const WhyInvest = () => (
               alt="Painel de tecnologia e monitoramento para rastreamento inteligente de veículos"
               loading="lazy"
               decoding="async"
-              className="relative z-10 rounded-[40px] border-8 border-white shadow-2xl"
+              className="theme-border relative z-10 rounded-[40px] border-8 border-white shadow-2xl dark:border-[#0F1736]"
               referrerPolicy="no-referrer"
             />
+
             <div
               aria-hidden="true"
-              className="absolute -bottom-6 -right-6 h-64 w-64 rounded-[40px] bg-[#F7941E] opacity-20"
+              className="absolute -bottom-6 -right-6 h-64 w-64 rounded-[40px] bg-[#F7941E]  opacity-20"
             />
+
             <div
               aria-hidden="true"
-              className="absolute -left-6 -top-6 h-32 w-32 rounded-full border-8 border-[#1e3a8a] opacity-10"
+              className="absolute -left-6 -top-6 h-32 w-32 rounded-full border-8 border-[#1e3a8a] opacity-10 dark:border-white/10"
             />
           </figure>
         </div>
 
         <div className="lg:w-1/2">
-
           <SectionHeader
             theme="light"
             align="left"
             size="md"
             title={
               <>
-                Por que investir em <br></br>
+                Por que investir em <br />
                 <span className="text-[#f0ac58]">Rastreamento veicular ?</span>
-                
               </>
             }
-            description="Investir em astreamento veicular inteligente traz ganhos reais para empresas de todos os portes. Nossa plataforma entrega dados e insights estratégicos para reduzir custos, aumentar a produtividade, reforçar a segurança e otimizar a gestão da sua frota."
+            titleColor="dark:text-white"
+            descriptionColor="text-zinc-700 dark:text-white/70"
+            description="Investir em rastreamento veicular inteligente traz ganhos reais para empresas de todos os portes. Nossa plataforma entrega dados e insights estratégicos para reduzir custos, aumentar a produtividade, reforçar a segurança e otimizar a gestão da sua frota."
           />
 
           <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2" role="list">
@@ -78,15 +80,18 @@ export const WhyInvest = () => (
               <li key={title}>
                 <article className="flex gap-4">
                   <div
-                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-white text-[#F7941E] shadow-sm"
+                    className="theme-card flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl text-[#F7941E] shadow-sm"
                     aria-hidden="true"
                   >
                     <Icon size={24} aria-hidden="true" focusable="false" />
                   </div>
 
                   <div>
-                    <h3 className="mb-1 font-bold text-[#1e3a8a]">{title}</h3>
-                    <p className="text-sm text-zinc-600">{description}</p>
+                    <h3 className="mb-1 font-bold text-[#1e3a8a] dark:text-[#F7941E]">
+                      {title}
+                    </h3>
+
+                    <p className="theme-text-soft text-sm">{description}</p>
                   </div>
                 </article>
               </li>
@@ -99,7 +104,7 @@ export const WhyInvest = () => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Falar com especialista pelo WhatsApp"
-              className="inline-flex mt-12 bg-[#1e3a8a] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1e2866] transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] focus:ring-offset-2"
+              className="theme-button-secondary inline-flex rounded-full px-8 py-4 font-bold text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] focus:ring-offset-2"
             >
               Falar com especialista
             </a>

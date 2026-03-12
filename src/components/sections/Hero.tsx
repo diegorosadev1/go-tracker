@@ -1,5 +1,5 @@
 import React, { useEffect, useId, useState } from "react";
-import { ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const slides = [
   },
   {
     image:
-      "	https://www.cobli.co/wp-content/uploads/2022/08/carro-de-frota-scaled.jpeg",
+      "https://www.cobli.co/wp-content/uploads/2022/08/carro-de-frota-scaled.jpeg",
     title: "Mais segurança para sua operação",
     subtitle:
       "Proteja seus veículos com monitoramento inteligente e resposta rápida a qualquer ocorrência.",
@@ -34,7 +34,7 @@ const slides = [
   {
     image:
       "https://www.intelipost.com.br/wp-content/uploads/2021/08/post_thumbnail-26bb9c9b03f040ccc121af1b3541493f.jpeg",
-    title: "Decisões estratégicas mais inteligentess",
+    title: "Decisões estratégicas mais inteligentes",
     subtitle:
       "Use dados da operação para melhorar produtividade e tomar decisões estratégicas.",
     link: "/servicos/otimizacao-rotas",
@@ -64,7 +64,7 @@ export const Hero = () => {
 
   return (
     <section
-      className="relative h-[420px] md:h-[600px] overflow-hidden"
+      className="bg-[#E0E0E0] dark:bg-[#0B122E] relative pt-10 h-[420px] overflow-hidden md:h-[600px]"
       aria-labelledby={titleId}
       aria-describedby={descriptionId}
     >
@@ -85,7 +85,7 @@ export const Hero = () => {
             className="absolute inset-0"
             aria-hidden={false}
           >
-            <div className="absolute inset-0 z-10 bg-black/50" />
+            <div className="absolute inset-0 z-10 bg-black/40 dark:bg-black/60" />
 
             <img
               src={currentSlide.image}
@@ -98,13 +98,13 @@ export const Hero = () => {
               sizes="100vw"
             />
 
-            <div className="absolute inset-0 z-20 top-30 flex items-center">
+            <div className="absolute inset-0 top-30 z-20 flex items-center">
               <div className="mx-auto w-full max-w-7xl px-4">
                 <motion.div
                   initial={{ x: -40, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
-                  className="max-w-2xl rounded-2xl border-l-4 border-gotracker-orange bg-black/40 p-6 backdrop-blur-sm md:p-8"
+                  className="max-w-2xl rounded-2xl border-l-4 border-gotracker-orange bg-[#1f1f23]/55 p-6 text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-sm dark:bg-black/45 dark:shadow-[0_12px_32px_rgba(0,0,0,0.35)] md:p-8"
                 >
                   <h1
                     id={titleId}
@@ -115,16 +115,14 @@ export const Hero = () => {
 
                   <p
                     id={descriptionId}
-                    className="hidden md:block mb-8 text-base text-white/90 md:text-lg"
+                    className="mb-8 hidden text-base text-white/90 md:block md:text-lg"
                   >
                     {currentSlide.subtitle}
                   </p>
 
                   <Link
                     to={currentSlide.link}
-                    className="inline-flex w-fit items-center gap-2 rounded-full bg-gotracker-orange px-8 py-3 
-                    font-bold text-white transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2
-                     focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    className="inline-flex w-fit items-center gap-2 rounded-full bg-gotracker-orange px-8 py-3 font-bold text-white transition-transform hover:scale-105 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                     aria-label={currentSlide.cta}
                   >
                     SAIBA MAIS
@@ -136,11 +134,8 @@ export const Hero = () => {
           </motion.article>
         </AnimatePresence>
 
-        <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 ">
-          <ul
-            className="flex items-center gap-2 "
-            aria-label="Selecionar slide"
-          >
+        <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3">
+          <ul className="flex items-center gap-2" aria-label="Selecionar slide">
             {slides.map((slide, i) => {
               const isActive = current === i;
 
@@ -155,7 +150,7 @@ export const Hero = () => {
                     className={`h-3 rounded-full transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
                       isActive
                         ? "w-8 bg-gotracker-orange"
-                        : "w-3 bg-white/50 hover:bg-white/80"
+                        : "w-3 bg-white/60 hover:bg-white/90 dark:bg-white/40 dark:hover:bg-white/70"
                     }`}
                     aria-label={`Ir para o slide ${i + 1}: ${slide.title}`}
                     aria-controls={carouselId}

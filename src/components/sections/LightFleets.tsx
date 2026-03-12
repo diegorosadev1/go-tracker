@@ -43,7 +43,7 @@ export const LightFleets = () => {
   return (
     <section
       aria-labelledby="light-fleets-title"
-      className="relative overflow-hidden bg-slate-950 px-4 py-32 text-white"
+      className="theme-section relative overflow-hidden bg-slate-950 px-4 py-32 text-white"
     >
       <div aria-hidden="true" className="absolute inset-0 opacity-20">
         <div className="absolute left-0 top-0 h-full w-full bg-[radial-gradient(circle_at_50%_50%,#1e3a8a_0%,transparent_50%)]" />

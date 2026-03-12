@@ -6,11 +6,11 @@ export const AppShowcase = () => (
   <section
     id="quem-somos"
     aria-labelledby="app-showcase-title"
-    className="relative z-10 overflow-hidden bg-zinc-50 py-24"
+    className="bg-[#DEDEDE] dark:bg-slate-950 relative z-10 overflow-hidden py-24"
   >
     <div
       aria-hidden="true"
-      className="absolute inset-0 opacity-[0.1]"
+      className="absolute inset-0 opacity-[0.08] dark:opacity-[0.06]"
       style={{
         backgroundImage:
           "linear-gradient(#1e3a8a 1px, transparent 1px), linear-gradient(90deg, #1e3a8a 1px, transparent 1px)",
@@ -29,32 +29,27 @@ export const AppShowcase = () => (
           >
             <SectionHeader
               align="left"
-              theme="light"
+              theme="dark"
               size="md"
               title={
                 <>
                   Sobre a
                   <span className="text-[#F7941E]">
-                    <br></br>Go Tracker
+                    <br />
+                    Go Tracker
                   </span>
                 </>
               }
-              descriptionColor="text-white/80"
-              description="    A GoTracker nasceu para oferecer rastreamento veicular com
-                  tecnologia avançada, preço justo e atendimento de qualidade.
-                  Somos especialistas em rastreamento e telemetria para veículos
-                  de passeio, utilitários e frotas empresariais em todo o
-                  território nacional."
-              secondDescription="  Trabalhamos com equipamentos homologados pela Anatel e um
-                  sistema exclusivo de monitoramento, acessível via web e
-                  aplicativo para Android e iOS, para dar mais controle,
-                  segurança e eficiência à sua operação."
+              titleColor="dark:text-white"
+              descriptionColor="text-zinc-700 dark:text-white/70"
+              description="A GoTracker nasceu para oferecer rastreamento veicular com tecnologia avançada, preço justo e atendimento de qualidade. Somos especialistas em rastreamento e telemetria para veículos de passeio, utilitários e frotas empresariais em todo o território nacional."
+              secondDescription="Trabalhamos com equipamentos homologados pela Anatel e um sistema exclusivo de monitoramento, acessível via web e aplicativo para Android e iOS, para dar mais controle, segurança e eficiência à sua operação."
             />
           </motion.div>
 
           <nav
             aria-label="Links para download do aplicativo"
-            className="md:mt-12 hidden md:flex gap-4"
+            className="hidden gap-4 md:mt-12 md:flex"
           >
             <a
               href="https://play.google.com"
@@ -90,12 +85,11 @@ export const AppShowcase = () => (
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: "spring" }}
-            className="relative z-10 mx-auto md:mt-6 top-[-3rem]"
+            className="relative top-[-3rem] z-10 mx-auto md:mt-6"
             aria-labelledby="app-mockup-caption"
           >
-            <div className="relative mx-auto h-[260px] w-[130px] overflow-hidden rounded-[2rem] border-[5px] border-[#1a1c2c] bg-[#1a1c2c] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.45)] sm:h-[340px] sm:w-[170px] sm:rounded-[2.6rem] sm:border-[6px] lg:h-[620px] lg:w-[300px] lg:rounded-[3.5rem] lg:border-[10px]">
-              {" "}
-              <div className="relative h-full w-full overflow-hidden bg-[#eef2f7]">
+            <div className="relative mx-auto h-[260px] w-[130px] overflow-hidden rounded-[2rem] border-[5px] border-[#1a1c2c] dark:border-[#353641] bg-[#1a1c2c] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.45)] sm:h-[340px] sm:w-[170px] sm:rounded-[2.6rem] sm:border-[6px] lg:h-[620px] lg:w-[300px] lg:rounded-[3.5rem] lg:border-[10px] dark:border-[#0F1736] dark:bg-[#0F1736] dark:shadow-[0_24px_50px_-20px_rgba(0,0,0,0.65)]">
+              <div className="relative h-full w-full overflow-hidden bg-[#eef2f7] dark:bg-[#b9bfdf]">
                 <img
                   src="/assets/img/phone-bg.jpeg"
                   alt="Tela do aplicativo GoTracker exibida no mockup do celular"
@@ -106,7 +100,7 @@ export const AppShowcase = () => (
 
                 <div
                   aria-hidden="true"
-                  className="absolute bottom-5 left-1/2 h-1 w-1/3 -translate-x-1/2 rounded-full bg-white/70 backdrop-blur-sm sm:bottom-8 sm:h-1.5"
+                  className="absolute bottom-5 left-1/2 h-1 w-1/3 -translate-x-1/2 rounded-full bg-white/70 backdrop-blur-sm sm:bottom-8 sm:h-1.5 dark:bg-white/40"
                 />
               </div>
             </div>
@@ -117,6 +111,7 @@ export const AppShowcase = () => (
             </figcaption>
           </motion.figure>
         </div>
+
         <nav
           aria-label="Links para download do aplicativo"
           className="mt-12 flex gap-4 sm:hidden"
