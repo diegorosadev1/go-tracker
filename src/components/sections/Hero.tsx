@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     image:
-      "https://plus.unsplash.com/premium_photo-1661962667495-c9dd5c790758?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZyb3RhJTIwZGUlMjBjYXJyb3N8ZW58MHx8MHx8fDA%3D",
+      "/assets/img/tracking.png",
     title: "Controle total da sua frota",
     subtitle:
       "Monitore veículos em tempo real, acompanhe rotas e tenha todas as informações da operação em um único painel.",
