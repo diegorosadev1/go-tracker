@@ -26,6 +26,7 @@ export const CTA = () => {
 
   return (
     <section
+      id="contato"
       ref={sectionRef}
       aria-labelledby="cta-title"
       className="theme-section relative z-10 py-14 sm:py-16 md:py-20"
