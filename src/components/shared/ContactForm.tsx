@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion'; // Corrigido para 'framer-motion' (padrão)
 import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 
 export const ContactForm = () => {
@@ -10,6 +10,7 @@ export const ContactForm = () => {
     city: '',
     message: ''
   });
+
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -18,27 +19,29 @@ export const ContactForm = () => {
     setStatus('loading');
 
     try {
-      const response = await fetch('/api/contact', {
+      // O endpoint do seu formulário no Formspree
+      const response = await fetch('https://formspree.io/f/mzdygzez', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', city: '', message: '' });
+        // Retorna ao estado inicial após 5 segundos
         setTimeout(() => setStatus('idle'), 5000);
       } else {
-        throw new Error(data.message || 'Erro ao enviar mensagem');
+        const data = await response.json();
+        throw new Error(data.error || 'Erro ao enviar mensagem');
       }
     } catch (error: any) {
       console.error('Erro no envio:', error);
       setStatus('error');
-      setErrorMessage(error.message || 'Ocorreu um erro inesperado. Tente novamente mais tarde.');
+      setErrorMessage(error.message || 'Ocorreu um erro inesperado. Tente novamente.');
       setTimeout(() => setStatus('idle'), 5000);
     }
   };
@@ -55,7 +58,6 @@ export const ContactForm = () => {
           src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1920" 
           alt="Background"
           className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
         />
       </div>
 
