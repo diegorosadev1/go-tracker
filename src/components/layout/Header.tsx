@@ -97,24 +97,15 @@ export const Header = ({
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-      return;
-    }
-
     if (savedTheme === "light") {
       document.documentElement.classList.remove("dark");
       setIsDark(false);
       return;
     }
 
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-
-    document.documentElement.classList.toggle("dark", prefersDark);
-    setIsDark(prefersDark);
+    // 👉 padrão agora é DARK
+    document.documentElement.classList.add("dark");
+    setIsDark(true);
   }, []);
 
   const toggleTheme = () => {
@@ -145,7 +136,7 @@ export const Header = ({
                   <img
                     src="/assets/img/logo.png"
                     alt="Go Tracker - Rastreamento Veicular"
-                    className="h-20 object-contain"
+                    className="h-12 object-contain"
                   />
                 </Link>
               </div>

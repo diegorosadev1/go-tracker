@@ -24,7 +24,7 @@ const slides = [
   },
   {
     image:
-      "public/assets/img/tracking.webp",
+      "https://wicar.com.br/wp-content/uploads/2023/05/frotas-leves-1.png",
     title: "Reduza os custos operacionais",
     subtitle:
       "Identifique desperdícios, otimize rotas e aumente a eficiência da sua frota.",
